@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * h + transform.forward * v;
+        Vector3 move = transform.right * -v + transform.forward * h;
         rb.linearVelocity = new Vector3(move.x * speed, rb.linearVelocity.y, move.z * speed);
 
         // 🌙 GRAVEDAD REDUCIDA (efecto luna)
