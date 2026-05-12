@@ -4606,61 +4606,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5501463826058925403, guid: a13d069b2efd7874bb438cec39d00001, type: 3}
   m_PrefabInstance: {fileID: 219078013}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &219709644
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 219709646}
-  - component: {fileID: 219709645}
-  m_Layer: 0
-  m_Name: CollectibleManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &219709645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219709644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d4fc613fefe2249ae0e45275849582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollectibleManager
-  totalScore: 0
-  totalCollected: 0
-  onScoreChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  onItemCollected:
-    m_PersistentCalls:
-      m_Calls: []
-  onCollectibleType:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &219709646
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219709644}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.02295, y: 2.61788, z: 7.09339}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &220428480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47890,7 +47835,6 @@ SceneRoots:
   - {fileID: 444299632}
   - {fileID: 825434345}
   - {fileID: 1063872145}
-  - {fileID: 219709646}
   - {fileID: 1979158023}
   - {fileID: 1826102011}
   - {fileID: 998196366}
