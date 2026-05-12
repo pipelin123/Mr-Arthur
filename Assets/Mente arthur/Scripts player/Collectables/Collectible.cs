@@ -1,20 +1,10 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
-/// <summary>
-/// Coleccionable tipo memoria. Avisa al CollectibleCounter al ser recogido.
-/// </summary>
 public class Collectible : MonoBehaviour
 {
     [Header("Configuración")]
     public string playerTag = "Player";
     public int pointValue = 10;
-
-    [Header("Aura / Halo")]
-    public Renderer auraRenderer;
-    public float auraMinAlpha = 0.0f;
-    public float auraMaxAlpha = 0.5f;
-    public float auraPulseSpeed = 1.6f;
 
     [Header("Floteo y rotación")]
     public float rotationSpeed = 60f;
@@ -28,13 +18,10 @@ public class Collectible : MonoBehaviour
 
     private const string SCORE_KEY = "CollectibleScore";
     private Vector3 startPosition;
-    private Material auraMat;
 
     void Start()
     {
         startPosition = transform.position;
-        if (auraRenderer != null)
-            auraMat = auraRenderer.material;
     }
 
     void Update()
@@ -42,26 +29,16 @@ public class Collectible : MonoBehaviour
         float newY = startPosition.y + Mathf.Sin(Time.time * bobFrequency) * bobAmplitude;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
-
-        if (auraMat != null)
-        {
-            float t = (Mathf.Sin(Time.time * auraPulseSpeed) + 1f) / 2f;
-            Color c = auraMat.color;
-            c.a = Mathf.Lerp(auraMinAlpha, auraMaxAlpha, t);
-            auraMat.color = c;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag(playerTag)) return;
 
-        // Sumar puntos
         int score = PlayerPrefs.GetInt(SCORE_KEY, 0) + pointValue;
         PlayerPrefs.SetInt(SCORE_KEY, score);
         PlayerPrefs.Save();
 
-        // Avisar al contador ← nuevo
         if (CollectibleCounter.Instance != null)
             CollectibleCounter.Instance.RegisterCollect();
 

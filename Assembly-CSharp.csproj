@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Assets\Mente arthur\PianoKey.cs" />
     <Compile Include="Assets\Mente arthur\Scripts player\Collectables\Collectible.cs" />
+    <Compile Include="Assets\Mente arthur\Scripts player\ScenePortal mente.cs" />
     <Compile Include="Assets\Mente arthur\Plataformas.cs" />
     <Compile Include="Assets\Mente arthur\Scripts player\Collectables\DoorRotator.cs" />
     <Compile Include="Assets\Mente arthur\Scripts player\Collectables\CollectibleCounter.cs" />
